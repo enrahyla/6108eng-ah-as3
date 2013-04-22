@@ -6,16 +6,17 @@ class EventTest < ActiveSupport::TestCase
   # end
 
 
-  def new_event(attributes ={})
-    attributes[:id] || = 1
-    attributes[:title] || = 'Holiday'
-    attributes[:body] || = 'Trip abroad coming soon'
+  def new_event
+    attributes[:id] = '1'
+    attributes[:title] = 'test'
+    attributes[:body] = 'this is a test'
+    attributes[:image]= 'test.jpg'
+    attributes[:tag] = 'tag'
 
-    event = Event.new(attributes)
+
+test "Should not save without title" do
+    event = Event.new
+    assert !event.save,
     event
-  end
-
-  def test_even_should_have_one_id
-    assert_equal '10', event(:one).approved
   end
 end

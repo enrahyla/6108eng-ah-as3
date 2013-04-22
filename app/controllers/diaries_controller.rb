@@ -53,44 +53,31 @@ end
   # POST /diaries
   # POST /diaries.json
   def create
-    @diary = Diary.new(params[:diary])
-
+    @diary = Diary.create!(params[:diary])
     respond_to do |format|
-      if @diary.save
-        format.html { redirect_to @diary, notice: 'Diary entry was successfully created.' }
-        format.json { render json: @diary, status: :created, location: @diary }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @diary.errors, status: :unprocessable_entity }
-      end
+        format.html { redirect_to diaries_url }
+        format.js
     end
   end
-
   # PUT /diaries/1
   # PUT /diaries/1.json
   def update
     @diary = Diary.find(params[:id])
+    @diary.update_attributes!(params[:diary])
 
     respond_to do |format|
-      if @diary.update_attributes(params[:diary])
         format.html { redirect_to @diary, notice: 'Diary was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @diary.errors, status: :unprocessable_entity }
-      end
+        format.js
     end
   end
 
   # DELETE /diaries/1
   # DELETE /diaries/1.json
   def destroy
-    @diary = Diary.find(params[:id])
-    @diary.destroy
-
+    @diary = Diary.destroy(params[:id])
     respond_to do |format|
-      format.html { redirect_to diaries_url }
-      format.json { head :no_content }
+      format.html { redirect_to @diaries }
+      format.js
     end
   end
 end

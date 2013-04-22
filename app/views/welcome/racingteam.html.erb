@@ -9,6 +9,7 @@
 
     <!-- Le styles -->
     <link href="../assets/mystyles.css" rel="stylesheet">
+
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -41,6 +42,39 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").toggle();
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").addClass("important blue");
+  });
+});
+</script>
+
+<style type="text/css">
+.important
+{
+font-weight:bold;
+font-size:xx-large;
+}
+.blue
+{
+color:red;
+}
+</style>
+
   </head>
 
   <body>
@@ -94,9 +128,10 @@
         <br>
         <p>Online entry is available for the races this year and this is the preferred method so please ensure that it is done this way. It is possible to sign up for one race at a time or all 5 races in one go. Payment can be done via paypal or credit/debit card. The races can be signed up for by selecting the link below:</p>
         <br>
-        <a href="http://form.jotform.com/form/12565537275" title="Online Enrty Form">Online Entry Form</a><!-- link to online entry form-->
+        <button>Online Entry Forms</button>
+        <p style = "display :none"><a href="http://form.jotform.com/form/12565537275" title="Online Enrty Form">Online Entry Form</a></p><!-- link to online entry form-->
         <br>
-        <a href="http://www.sharks.org.uk/frostbite.pdf" title="Rules and Terms and conditions" rel="htmltooltip">Rules and Terms and conditions</a><!-- link to rules terms and conditions-->
+        <p style = "display :none"><a href="http://www.sharks.org.uk/frostbite.pdf" title="Rules and Terms and conditions" rel="htmltooltip">Rules and Terms and conditions</a></p><!-- link to rules terms and conditions-->
         <div class="htmltooltip">Find the rules and terms and conditions of our races here.</div>
         <br>
 
@@ -104,13 +139,14 @@
         <h4>Its that time of year again!</h4>
         <p>We are again inviting entries to the Pendle winter race league held on the 1st Saturday of October, November, December, February and March. As always all club members are welcome to compete.</p>
         <br>
-        <p>The dates are as follows:</p>
-        <ul>
-          <li>Saturday October 1st 2011</li>
-          <li>Saturday November 5th 2011</li>
-          <li>Saturday December 3rd 2011</li>
-          <li>Saturday March 3rd 2012</li>
-        </ul>
+        <button>View Dates</button>
+        <p style = "display :none">The dates are as follows:</p>
+        <p style = "display :none"><ul></p>
+          <p style = "display :none">Saturday October 1st 2011</p>
+          <p style = "display :none">Saturday November 5th 2011</p>
+          <p style = "display :none">Saturday December 3rd 2011</p>
+          <p style = "display :none">Saturday March 3rd 2012</p>
+        <p style = "display :none"></ul></p>
         <br>
 
         <p>Please read the race details below, if you are interested in racing then this race can be entered by emailing:</p>
@@ -121,10 +157,10 @@
 
 
         <h4>Race Details</h4>
-        <h6>Cost</h6>
+        <button>Costs</button>
         <ul>
-          <li>It is £8 per race and £3 for skis and/or boot hire.</li>
-          <p class="text-error">IMPORTANT: The skis and boots we hire are not racing skis</p>
+          <p style = "display :none">It is £8 per race and £3 for skis and/or boot hire.</p> <p style = "display :none"><div id="div1">*Please note this do not include ski or boot hire</div></p>
+          
         </ul>
         
         <br>

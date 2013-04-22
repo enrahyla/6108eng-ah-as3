@@ -26,7 +26,7 @@ events_url(format: "atom")) %>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+     
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:body) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -36,7 +36,7 @@ events_url(format: "atom")) %>
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= link_to event.id, event_path(event) %></td>
+      
         <td><%= event.title %></td>
         <td><%= event.body %></td>
         <td><%= event.created_at %></td>
@@ -55,7 +55,6 @@ events_url(format: "atom")) %>
   </tbody>
 </table>
 <% if logged_in? %>
-
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_event_path,id: "new_link", remote: true,

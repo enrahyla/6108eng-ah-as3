@@ -1,10 +1,16 @@
 Oscapp::Application.routes.draw do
 
+  get "tags/index"
+
+  get "tags/show"
+
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
   
   resources :diaries
+
+  resources :tags
 
   resources :events
 
@@ -29,6 +35,9 @@ Oscapp::Application.routes.draw do
   match 'racingteam' => 'welcome#racingteam'
   match 'lessons' => 'welcome#lessons'
   match 'gallery' => 'welcome#gallery'
+
+  get 'authors/new'
+
   
 
   

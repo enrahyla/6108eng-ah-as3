@@ -26,14 +26,15 @@ diaries_url(format: "xml")) %>
  <!-- button for new entry-->
  <center>
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_diary_path,
+            new_diary_path,id: "new_link", remote: true,
             :class => 'btn btn-primary' %>
             <% end %>
+
   </center>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:View) %></th>
       <th><%= model_class.human_attribute_name(:date) %></th>
       <th><%= model_class.human_attribute_name(:body) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -43,7 +44,7 @@ diaries_url(format: "xml")) %>
   <tbody>
     <% @diaries.each do |diary| %>
       <tr>
-        <td><%= link_to diary.id, diary_path(diary) %></td>
+        <td><%= link_to "View", diary_path(diary) %></td>
         <td><%= diary.title.strftime("%d/%m/%Y %H:%M")  %></td>
         <td><%= diary.body %></td>
 
@@ -52,11 +53,7 @@ diaries_url(format: "xml")) %>
           <% if logged_in? %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_diary_path(diary), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      diary_path(diary),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+         <%= link_to "remove", diary, method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: 'btn btn-mini' %>
                       <% end %>
         </td>
       </tr>

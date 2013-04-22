@@ -4,7 +4,17 @@
 <div class = "container">
   <div class = "pagination-centered">
 
+
 <%= form_for @event, :html => { :class => 'form-horizontal' } do |f| %>
+
+ 
+   <p>
+    <%= f.label :tag_list %><br />
+ 
+    
+    <%= f.text_field :tag_list %>
+  </p>  
+
   <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
@@ -20,7 +30,7 @@
 
   <div class="form-actions">
 
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= f.submit nil, remote: true, :class => 'btn btn-primary' %>
     <p>
       <% if @event.image.exists? %>
       <%= image_tag @event.image.url%><br />

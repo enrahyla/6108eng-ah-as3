@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
 
-  before_filter :zero_authors_or_authenticated, only: [:new, :create]
+  #before_filter :zero_authors_or_authenticated, only: [:new, :create]
 
   # GET /authors
   # GET /authors.json
@@ -9,7 +9,7 @@ class AuthorsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @authors }
+       format.json { render json: @authors }
     end
   end
 
